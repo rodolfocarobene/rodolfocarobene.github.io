@@ -11,18 +11,20 @@ Personal GitHub Pages site (user site, served at https://rodolfocarobene.github.
 ## Stack
 
 - Plain static HTML/CSS/vanilla JS. No framework, no bundler, no Jekyll.
-- Projects list: `assets/main.js` fetches public, non-fork, non-archived repos from the GitHub REST API at page load. `index.html` holds a static fallback list.
+- Projects list: `assets/main.js` fetches public, non-fork repos (archived ones flagged) from the GitHub REST API at page load, sorted by stars: top tier printed large, starred as slips, unstarred as a pencilled list. `index.html` holds a static fallback list.
 - Deploy: `.github/workflows/pages.yml` (build CV with latexmk, then deploy via GitHub Pages Actions). Repo setting Pages -> Source must be "GitHub Actions".
 
 ## Build / test
 
 - CV locally: `cd cv && latexmk -pdf curriculum.tex` (needs texlive + biber). Clean with `latexmk -C`.
+- CV thumbnail for local preview: `pdftoppm -png -f 1 -l 1 -singlefile -scale-to-x 720 -scale-to-y -1 cv/curriculum.pdf assets/cv-page1` (gitignored, CI renders it). CI also writes the deploy date into the DATE field.
 - Site locally: `python3 -m http.server 8000` from the repo root, open http://localhost:8000.
 - Before committing: build the CV locally with no errors and check the page renders in light and dark mode and at phone width.
 
 ## Conventions
 
-- Accent color #214F77 (same as the CV). Colors as CSS custom properties with light/dark variants.
+- Visual world: engineering logbook (green grid paper, pen-blue handwriting, one red stamp). DESIGN.md is the visual authority, PRODUCT.md the product truth, `.impeccable/surfaces/index-html.md` the direction contract. Colors as CSS custom properties with light/dark variants.
+- Fonts are self-hosted in `assets/fonts/` (no external font CDNs at runtime).
 - Prose on the page: concise, no semicolons unless necessary.
 - Keep the page self-contained: no external scripts or trackers.
 

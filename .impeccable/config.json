@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "hero-eyebrow-chip",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-20T14:11:45.119Z",
+        "reason": "finish reviewer: 'Name' is one of four printed field labels in the logbook header box, not a kicker"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-20T14:11:45.129Z",
+        "reason": "finish reviewer: contacts ledger is a ruled pad table, 40px rows vertically centred"
+      }
+    ]
+  }
+}

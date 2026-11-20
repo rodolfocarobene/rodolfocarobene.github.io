@@ -4,72 +4,189 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rodolfo Carobene</title>
-  <meta name="description" content="Rodolfo Carobene, PhD candidate in Physics at the University of Milano-Bicocca working on superconducting qubits, qudits and FPGA-based quantum control.">
+  <meta name="description" content="Rodolfo Carobene, PhD candidate in Physics at the University of Milano-Bicocca. Superconducting qubits and qudits, and the FPGA electronics that drive them.">
+  <meta name="theme-color" content="#E4EEDC" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#18221C" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta property="og:title" content="Rodolfo Carobene">
-  <meta property="og:description" content="PhD candidate in Physics, superconducting quantum technologies.">
+  <meta property="og:description" content="PhD candidate in Physics. Superconducting qubits, qudits and the FPGA electronics that drive them.">
   <meta property="og:image" content="https://rodolfocarobene.github.io/assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/kalam-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/barlow-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <main class="page">
-    <header class="hero">
-      <img class="hero-logo" src="assets/logo.svg" alt="" width="72" height="72">
-      <div>
-        <h1>Rodolfo Carobene</h1>
-        <p class="tagline">PhD candidate in Physics &middot; University of Milano-Bicocca</p>
+  <div class="sheet">
+    <header class="pad-header">
+      <div class="field field-mark">
+        <img src="assets/logo.svg" alt="" width="48" height="48">
+      </div>
+      <div class="field field-name">
+        <span class="field-label">Name</span>
+        <h1 class="hand">Rodolfo Carobene</h1>
+      </div>
+      <div class="field field-date">
+        <span class="field-label">Date</span>
+        <span class="hand" id="today">20 Nov 2026</span>
+      </div>
+      <div class="field field-sheet">
+        <span class="field-label">Sheet</span>
+        <span class="hand">1 of 1</span>
+      </div>
+      <div class="field field-subject">
+        <span class="field-label">Subject</span>
+        <p class="hand">Superconducting qubits &amp; qudits, and the FPGA electronics that drive them</p>
       </div>
     </header>
 
-    <section aria-labelledby="about">
-      <h2 id="about">About</h2>
-      <p>
-        I work on superconducting quantum technologies in Milan. My research looks at qudits as a
-        natural extension of qubits, with applications to fermionic simulation and to searches for
-        dark-matter candidates such as axions and dark photons.
-      </p>
-      <p>
-        On the experimental side I design control and readout experiments for superconducting devices,
-        and I build the RFSoC-based electronics and FPGA firmware that run them. I contribute to the
-        open-source quantum-control projects
-        <a href="https://github.com/qiboteam/qibolab">Qibolab</a> and
-        <a href="https://github.com/qiboteam/qibosoq">Qibosoq</a>.
-      </p>
-      <p class="actions">
-        <a class="button" href="cv.pdf">Download CV (PDF)</a>
-      </p>
-    </section>
+    <main>
+      <section class="entry entry-intro" aria-labelledby="about-heading">
+        <div class="intro-text">
+          <h2 id="about-heading" class="visually-hidden">About</h2>
+          <p class="lede">
+            I&rsquo;m a PhD candidate in Physics at the University of Milano-Bicocca, working on
+            superconducting quantum devices.
+          </p>
+          <p>
+            My research looks at qudits as a natural extension of qubits, for fermionic simulation and
+            for searches of dark-matter candidates such as axions and dark photons. In the lab I run
+            control and readout experiments, and I build what runs them: RFSoC firmware, FPGA lock-in
+            amplifiers and open-source control software like
+            <a href="https://github.com/qiboteam/qibosoq">Qibosoq</a> and
+            <a href="https://github.com/qiboteam/qibolab">Qibolab</a>.
+          </p>
+          <p>
+            Before and during the PhD I worked at the Technology Innovation Institute in Abu Dhabi and at
+            Intermodulation Products in Stockholm. If you are hiring, or you are a student looking for a
+            thesis on qubits, qudits or FPGAs, <a href="mailto:r.carobene@campus.unimib.it">write to me</a>.
+          </p>
+          <figure class="sketch">
+            <svg class="sketch-wide" viewBox="0 0 640 230" role="img" aria-labelledby="sketch-title">
+              <title id="sketch-title">Sketch of the readout chain: RFSoC FPGA firmware drives the qubit through a DAC, the signal is amplified by a TWPA in the cryostat and comes back through an ADC</title>
+              <g class="ink">
+                <path d="M14 86c38-2 92-1 136 1 1 26 0 52 1 76-44 2-96 1-136-1-2-24-1-52-1-76z"/>
+                <path d="M151 104c48-4 120-14 216-12"/>
+                <path d="M355 84l13 8-13 9"/>
+                <path d="M356 22c84-3 176-2 268 0 2 60 1 128 0 192-88 2-180 1-268-1-2-62-1-130 0-191z" class="dashed"/>
+                <path d="M378 76h22v32h-22zM406 76h22v32h-22z"/>
+                <path d="M400 92h6M401 88l4 8M405 88l-4 8"/>
+                <path d="M428 92c30 4 38 30 44 64"/>
+                <path d="M472 156c0-12 0-24 1-36 22 12 34 18 48 36-14 16-28 24-48 36-1-12-1-24-1-36z"/>
+                <path d="M521 156c30 0 44 6 52 0"/>
+                <path d="M573 156c6 34-10 50-70 50-150 2-250-6-350-52"/>
+                <path d="M166 146l-14 8 15 7"/>
+              </g>
+              <g class="ink-text">
+                <text x="83" y="118" text-anchor="middle" class="label-big">RFSoC</text>
+                <text x="83" y="146" text-anchor="middle">FPGA firmware</text>
+                <text x="252" y="82" text-anchor="middle">DAC, drive pulses</text>
+                <text x="372" y="134">qubit / qudit</text>
+                <text x="498" y="110" text-anchor="middle">TWPA</text>
+                <text x="250" y="226" text-anchor="middle">ADC, readout</text>
+                <text x="612" y="44" text-anchor="end" class="faint">cryostat</text>
+              </g>
+            </svg>
+            <svg class="sketch-tall" viewBox="0 0 340 450" role="img" aria-labelledby="sketch-title-tall">
+              <title id="sketch-title-tall">Sketch of the readout chain: RFSoC FPGA firmware drives the qubit through a DAC, the signal is amplified by a TWPA in the cryostat and comes back through an ADC</title>
+              <g class="ink">
+                <path d="M84 10c40-2 96-1 140 1 1 22 0 46 1 68-46 2-98 1-140-1-2-22-1-46-1-68z"/>
+                <path d="M130 80c-2 40 2 90 0 146"/>
+                <path d="M121 214l9 13 9-13"/>
+                <path d="M30 190c80-2 170-1 250 0 2 80 1 170 0 250-82 2-170 1-250-1-2-80-1-168 0-249z" class="dashed"/>
+                <path d="M100 230h22v32h-22zM128 230h22v32h-22z"/>
+                <path d="M122 246h6M123 242l4 8M127 242l-4 8"/>
+                <path d="M144 262c0 20 16 30 16 58"/>
+                <path d="M120 320c26 0 54 0 80 1-12 18-26 32-40 49-14-17-28-32-40-50z"/>
+                <path d="M160 370C160 410 180 425 215 425C280 425 305 400 305 330C305 230 305 120 295 80C288 55 270 45 227 45"/>
+                <path d="M239 37l-13 8 13 8"/>
+              </g>
+              <g class="ink-text">
+                <text x="154" y="38" text-anchor="middle" class="label-big">RFSoC</text>
+                <text x="154" y="64" text-anchor="middle">FPGA firmware</text>
+                <text x="140" y="122">DAC, drive pulses</text>
+                <text x="292" y="168" text-anchor="end">ADC, readout</text>
+                <text x="160" y="252">qubit / qudit</text>
+                <text x="210" y="350">TWPA</text>
+                <text x="40" y="214" class="faint">cryostat</text>
+              </g>
+            </svg>
+            <figcaption class="note">the chain I build and measure, from FPGA to qubit and back</figcaption>
+          </figure>
+        </div>
 
-    <section aria-labelledby="contacts">
-      <h2 id="contacts">Contacts &amp; profiles</h2>
-      <ul class="links">
-        <li><span class="label">Email</span><a href="mailto:r.carobene@campus.unimib.it">r.carobene@campus.unimib.it</a></li>
-        <li><span class="label">GitHub</span><a href="https://github.com/rodolfocarobene">github.com/rodolfocarobene</a></li>
-        <li><span class="label">ORCID</span><a href="https://orcid.org/0000-0002-0579-3017">0000-0002-0579-3017</a></li>
-        <li><span class="label">Scopus</span><a href="https://www.scopus.com/authid/detail.uri?authorId=58220928400">Author ID 58220928400</a></li>
-        <li><span class="label">Scholar</span><a href="https://scholar.google.com/citations?user=jF2jm_8AAAAJ&amp;hl=en">Google Scholar profile</a></li>
-        <li><span class="label">Location</span><span>Milan, Italy</span></li>
-      </ul>
-    </section>
+        <div class="cv-block">
+          <a class="printout cv-printout" href="cv.pdf" aria-label="Download CV (PDF)">
+            <span class="tape tape-a" aria-hidden="true"></span>
+            <span class="tape tape-b" aria-hidden="true"></span>
+            <img src="assets/cv-page1.png" alt="First page of Rodolfo Carobene's CV" width="720" height="1018">
+            <svg class="stamp" viewBox="0 0 150 86" aria-hidden="true">
+              <defs>
+                <filter id="stamp-ink" x="-5%" y="-5%" width="110%" height="110%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="2" seed="7" result="warp"/>
+                  <feDisplacementMap in="SourceGraphic" in2="warp" scale="2.6" result="rough"/>
+                  <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="3" result="grain"/>
+                  <feColorMatrix in="grain" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.5 1.55" result="mask"/>
+                  <feComposite in="rough" in2="mask" operator="in"/>
+                </filter>
+              </defs>
+              <g filter="url(#stamp-ink)">
+                <rect x="5" y="5" width="140" height="76" fill="none" stroke="currentColor" stroke-width="4"/>
+                <text x="75" y="28" text-anchor="middle" class="stamp-small">CURRICULUM</text>
+                <text x="75" y="70" text-anchor="middle" class="stamp-big">PDF</text>
+              </g>
+            </svg>
+          </a>
+          <p class="note cv-note">
+            <svg class="note-arrow" viewBox="0 0 44 54" aria-hidden="true">
+              <path d="M6 52C4 32 14 14 38 6" />
+              <path d="M26 4l12 2-5 11" />
+            </svg>
+            <span>latest version, rebuilt<br>from LaTeX on every update</span>
+          </p>
+        </div>
+      </section>
 
-    <section aria-labelledby="projects">
-      <h2 id="projects">Open-source projects</h2>
-      <p class="muted">My public repositories on GitHub, most recently updated first.</p>
-      <ul class="repos" id="repo-list">
-        <!-- Static fallback, replaced by assets/main.js with live data from the GitHub API. -->
-        <li class="repo"><a href="https://github.com/rodolfocarobene/vivado_monitor">vivado_monitor</a><p>Live web monitor for Vivado FPGA builds.</p></li>
-        <li class="repo"><a href="https://github.com/rodolfocarobene/qudit_simulations">qudit_simulations</a></li>
-        <li class="repo"><a href="https://github.com/rodolfocarobene/SPVQE">SPVQE</a><p>Constrained VQE for excited states and ions.</p></li>
-        <li class="repo"><a href="https://github.com/rodolfocarobene/git_lecture">git_lecture</a><p>Resources for a git and GitHub lecture.</p></li>
-      </ul>
-      <p class="muted"><a href="https://github.com/rodolfocarobene?tab=repositories">All repositories on GitHub &rarr;</a></p>
-    </section>
+      <section class="entry" aria-labelledby="contacts-heading">
+        <h2 id="contacts-heading" class="hand entry-title">Contacts &amp; profiles</h2>
+        <dl class="ledger">
+          <div><dt>Email</dt><dd><a href="mailto:r.carobene@campus.unimib.it">r.carobene@campus.unimib.it</a></dd></div>
+          <div><dt>GitHub</dt><dd><a href="https://github.com/rodolfocarobene">github.com/rodolfocarobene</a></dd></div>
+          <div><dt>ORCID</dt><dd><a href="https://orcid.org/0000-0002-0579-3017"><span class="num">0000-0002-0579-3017</span></a></dd></div>
+          <div><dt>Scopus</dt><dd><a href="https://www.scopus.com/authid/detail.uri?authorId=58220928400">Author ID <span class="num">58220928400</span></a></dd></div>
+          <div><dt>Scholar</dt><dd><a href="https://scholar.google.com/citations?user=jF2jm_8AAAAJ&amp;hl=en">Google Scholar profile</a></dd></div>
+          <div><dt>Based in</dt><dd>Milan, Italy &middot; University of Milano&#8209;Bicocca</dd></div>
+        </dl>
+      </section>
 
-    <footer>
-      <span>&copy; <span id="year">2026</span> Rodolfo Carobene</span>
+      <section class="entry" aria-labelledby="projects-heading">
+        <h2 id="projects-heading" class="hand entry-title">Open-source projects</h2>
+        <p class="note projects-note">most-starred first, straight from GitHub</p>
+        <div id="repo-list">
+          <!-- Offline fallback, replaced by assets/main.js with live data from the GitHub API. -->
+          <ul class="pencil-list">
+            <li><a href="https://github.com/rodolfocarobene/SPVQE">SPVQE</a>, constrained VQE for excited states</li>
+            <li><a href="https://github.com/rodolfocarobene/git_lecture">git_lecture</a>, a git and GitHub lecture</li>
+            <li><a href="https://github.com/rodolfocarobene/qudit_simulations">qudit_simulations</a></li>
+            <li><a href="https://github.com/rodolfocarobene/arxivbot">arxivbot</a></li>
+            <li><a href="https://github.com/rodolfocarobene/vivado_monitor">vivado_monitor</a>, live monitor for Vivado builds</li>
+          </ul>
+        </div>
+        <p class="all-repos"><a href="https://github.com/rodolfocarobene?tab=repositories">All repositories on GitHub</a></p>
+      </section>
+    </main>
+
+    <footer class="pad-footer">
+      <div class="field">
+        <span class="field-label">Recorded by</span>
+        <span class="hand signature">R. Carobene</span>
+      </div>
+      <div class="field">
+        <span class="field-label">Source</span>
+        <a href="https://github.com/rodolfocarobene/rodolfocarobene.github.io">plain HTML, on GitHub</a>
+      </div>
     </footer>
-  </main>
+  </div>
   <script src="assets/main.js" defer></script>
 </body>
 </html>

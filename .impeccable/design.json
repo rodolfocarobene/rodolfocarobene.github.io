@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-20T14:20:59.379736Z",
+  "title": "Design System: Rodolfo Carobene, engineering logbook",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Computation Paper",
+        "canonical": "#e4eedc",
+        "tonalRamp": [
+          "#2a3a2e",
+          "#46604b",
+          "#668a6d",
+          "#8db093",
+          "#b0c99f",
+          "#c9dbbd",
+          "#e4eedc",
+          "#f2f7ee"
+        ]
+      },
+      "print-green": {
+        "role": "neutral",
+        "displayName": "Pad Green",
+        "canonical": "#3f6b4a",
+        "tonalRamp": [
+          "#1c3023",
+          "#2a4a33",
+          "#3f6b4a",
+          "#5a8764",
+          "#7fae86",
+          "#a3c8a8",
+          "#c8e0cb",
+          "#e4f1e6"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Typeset Slate",
+        "canonical": "#22303a",
+        "tonalRamp": [
+          "#10171c",
+          "#22303a",
+          "#3a4b57",
+          "#56677a",
+          "#7a8b99",
+          "#a0adb8",
+          "#c8d1d8",
+          "#e6eaed"
+        ]
+      },
+      "pen-blue": {
+        "role": "primary",
+        "displayName": "Ballpoint Blue",
+        "canonical": "#1e3c8c",
+        "tonalRamp": [
+          "#0f1e47",
+          "#1e3c8c",
+          "#3558b5",
+          "#4a5f9c",
+          "#7a8fd0",
+          "#a9c0ff",
+          "#cddaff",
+          "#e8eeff"
+        ]
+      },
+      "stamp-red": {
+        "role": "secondary",
+        "displayName": "Rubber-Stamp Red",
+        "canonical": "#c8352b",
+        "tonalRamp": [
+          "#5a120d",
+          "#8c1f18",
+          "#b8291f",
+          "#c8352b",
+          "#e0675d",
+          "#ff6a5c",
+          "#ffa59c",
+          "#ffd6d1"
+        ]
+      },
+      "highlight-yellow": {
+        "role": "tertiary",
+        "displayName": "Highlighter Yellow",
+        "canonical": "#f2c230",
+        "tonalRamp": [
+          "#5a4508",
+          "#8a6c0e",
+          "#b8921a",
+          "#d9ac24",
+          "#f2c230",
+          "#f6d460",
+          "#f9e497",
+          "#fcf2cc"
+        ]
+      },
+      "slip-white": {
+        "role": "neutral",
+        "displayName": "Slip White",
+        "canonical": "#fbfcf8",
+        "tonalRamp": [
+          "#56615a",
+          "#7a857d",
+          "#9ea79f",
+          "#c0c8c1",
+          "#dde2dc",
+          "#eef1e8",
+          "#f6f8f2",
+          "#fbfcf8"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Name",
+        "purpose": "Handwritten name in the NAME field."
+      },
+      "headline": {
+        "displayName": "Entry title",
+        "purpose": "Handwritten section titles with an inked underline."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "First bio paragraph."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Typeset running text, max 62ch."
+      },
+      "annotation": {
+        "displayName": "Annotation",
+        "purpose": "Margin notes and captions in soft ballpoint."
+      },
+      "slip-title": {
+        "displayName": "Slip title",
+        "purpose": "Repo names on printouts."
+      },
+      "field-label": {
+        "displayName": "Field label",
+        "purpose": "Printed labels inside header box and ledger rows only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "printout-rest",
+        "value": "0 1px 1px rgba(34,48,40,0.22), 0 10px 24px -10px rgba(34,48,40,0.22)",
+        "purpose": "CV printout at rest."
+      },
+      {
+        "name": "printout-lift",
+        "value": "0 2px 2px rgba(34,48,40,0.22), 0 22px 34px -14px rgba(34,48,40,0.22)",
+        "purpose": "CV printout hover and focus."
+      },
+      {
+        "name": "slip-rest",
+        "value": "0 1px 1px rgba(34,48,40,0.22), 0 8px 18px -10px rgba(34,48,40,0.22)",
+        "purpose": "Repo slips at rest."
+      },
+      {
+        "name": "slip-lift",
+        "value": "0 2px 2px rgba(34,48,40,0.22), 0 18px 28px -14px rgba(34,48,40,0.22)",
+        "purpose": "Slip hover and focus."
+      }
+    ],
+    "motion": [
+      {
+        "name": "settle",
+        "value": "0.35s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Printouts straighten and lift on hover."
+      },
+      {
+        "name": "ink-draw",
+        "value": "0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.35s",
+        "purpose": "Margin arrow draws itself toward the CV."
+      },
+      {
+        "name": "stamp-land",
+        "value": "0.45s cubic-bezier(0.16, 1, 0.3, 1) 1.35s",
+        "purpose": "Red stamp lands on the printout. Disabled under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sheet-narrow",
+        "value": "820px"
+      },
+      {
+        "name": "phone",
+        "value": "560px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Pad Header",
+      "kind": "custom",
+      "refersTo": "pad-header",
+      "description": "Printed header box with labelled fields.",
+      "html": "<div class=\"ds-header\"><div class=\"ds-field\"><span class=\"ds-label\">NAME</span><span class=\"ds-name\">Rodolfo</span></div><div class=\"ds-field ds-last\"><span class=\"ds-label\">SHEET</span><span class=\"ds-hand\">1/1</span></div></div>",
+      "css": ".ds-header{display:grid;grid-template-columns:1fr 110px;border:1.5px solid var(--print,#3f6b4a);color:var(--ink,#22303a)}.ds-field{position:relative;padding:20px 14px 8px;border-right:1px solid var(--print,#3f6b4a)}.ds-last{border-right:0}.ds-label{position:absolute;top:5px;left:8px;font:600 .74rem/1 'Barlow Condensed',sans-serif;letter-spacing:.14em;color:var(--print,#3f6b4a)}.ds-name{font:700 2.4rem/1.05 Kalam,cursive;display:inline-block;transform:rotate(-1deg)}.ds-hand{font:400 1.3rem Kalam,cursive;color:var(--pen,#1e3c8c)}"
+    },
+    {
+      "name": "Repo Slip",
+      "kind": "card",
+      "refersTo": "slip",
+      "description": "Taped white printout for a starred repo.",
+      "html": "<a class=\"ds-slip\" href=\"#\"><span class=\"ds-slip-name\">qibosoq</span><p>RFSoC server for qubit control.</p><span class=\"ds-meta\">Python 12 stars</span></a>",
+      "css": ".ds-slip{position:relative;display:flex;flex-direction:column;gap:6px;max-width:300px;padding:22px 18px 14px;background:#fbfcf8;color:#22303a;text-decoration:none;transform:rotate(-1deg);box-shadow:0 1px 1px rgba(34,48,40,.22),0 8px 18px -10px rgba(34,48,40,.22);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}.ds-slip:hover,.ds-slip:focus-visible{transform:rotate(0) translateY(-3px);box-shadow:0 2px 2px rgba(34,48,40,.22),0 18px 28px -14px rgba(34,48,40,.22);outline:2px dashed #1e3c8c;outline-offset:4px}.ds-slip-name{font:600 1.35rem/1.15 'Barlow Condensed',sans-serif;color:#1e3c8c}.ds-slip p{margin:0;font-size:.95rem;color:#56615a}.ds-meta{padding-top:10px;border-top:1px dashed #c9d2c4;font:500 .82rem 'Barlow Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#56615a}"
+    },
+    {
+      "name": "Ledger Row",
+      "kind": "custom",
+      "refersTo": "pad-header",
+      "description": "Ruled contact row.",
+      "html": "<dl class=\"ds-ledger\"><div><dt>EMAIL</dt><dd>name@example.org</dd></div></dl>",
+      "css": ".ds-ledger{margin:0;border-top:1.5px solid #3f6b4a}.ds-ledger div{display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid #3f6b4a;min-height:40px;align-items:center}.ds-ledger dt{align-self:stretch;display:flex;align-items:center;border-right:1px solid #3f6b4a;font:600 .78rem 'Barlow Condensed',sans-serif;letter-spacing:.14em;color:#3f6b4a}.ds-ledger dd{margin:0;padding:6px 0 6px 16px;font:500 1rem Barlow,sans-serif;color:#22303a}"
+    },
+    {
+      "name": "Link",
+      "kind": "custom",
+      "refersTo": "link",
+      "description": "Ballpoint link with dashed focus.",
+      "html": "<a class=\"ds-link\" href=\"#\">All repositories</a>",
+      "css": ".ds-link{color:#1e3c8c;text-decoration-thickness:1px;text-underline-offset:3px;transition:text-decoration-thickness .15s}.ds-link:hover{text-decoration-thickness:2px}.ds-link:focus-visible{outline:2px dashed #1e3c8c;outline-offset:4px}"
+    },
+    {
+      "name": "Pencil List",
+      "kind": "custom",
+      "refersTo": "pencil-list",
+      "description": "Pencilled ruled list for unstarred repos and offline fallback.",
+      "html": "<ul class=\"ds-pencil\"><li><a href=\"#\">small-tool</a> a quick helper</li></ul>",
+      "css": ".ds-pencil{list-style:none;margin:0;padding:0;font:400 1.1rem/1.4 Kalam,cursive;color:#5d6660}.ds-pencil li{padding:8px 0 6px;border-bottom:1px solid #b0c99f}.ds-pencil a{color:#1e3c8c;font-weight:700}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Engineering Logbook",
+    "overview": "The page is one sheet of pale green computation paper from the notebook of a physicist who builds his own instruments. The whole viewport is the sheet, with printed pad furniture that never moves. Content sits on it as in a lab book: typeset slate, ballpoint-blue handwriting, white printouts held by tape.",
+    "keyCharacteristics": [
+      "Grid paper background in light and dark variants.",
+      "Printed structure in pad green, content in slate, personal voice in ballpoint blue.",
+      "White slips and printouts are the only raised objects, always taped.",
+      "One red rubber stamp is the only red. Highlighter yellow only as text selection.",
+      "Billing rank: repo printouts sized by stars."
+    ],
+    "rules": [
+      {
+        "name": "The One Red Rule",
+        "body": "Red belongs to the stamp and nothing else.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink Roles Rule",
+        "body": "Slate is typeset, blue is the hand, green is the printed pad.",
+        "section": "colors"
+      },
+      {
+        "name": "The Hand Is Personal Rule",
+        "body": "Kalam is for the name, entry titles, annotations and the signature, never running prose.",
+        "section": "typography"
+      },
+      {
+        "name": "The Printed Label Rule",
+        "body": "Uppercase tracked Condensed exists only as a label inside a printed box or ledger row.",
+        "section": "typography"
+      },
+      {
+        "name": "The Taped Object Rule",
+        "body": "Only things that could be taped to the page cast shadows, and each carries tape.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Flat Furniture Rule",
+        "body": "Header box, ledger and margin get lines, never shadows or fills.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Fixed Regions Rule",
+        "body": "Header box and margin rule never move or animate.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do build new content as something that exists on a logbook page.",
+      "Do place structure on the 20px cell grid and use multiples of --cell for vertical spacing.",
+      "Do keep square corners and tilt only hand-placed objects, by small angles.",
+      "Do keep every theme value as a custom property with a dark variant.",
+      "Do keep the single entrance motion as the only authored animation and honour reduced motion."
+    ],
+    "donts": [
+      "Don't add red anywhere but the stamp, or yellow anywhere but text selection.",
+      "Don't return to the academic-template column.",
+      "Don't use rounded cards, blur, gradients or glass.",
+      "Don't set running text in Kalam or tilt printed furniture.",
+      "Don't load external fonts, scripts or trackers."
+    ]
+  }
+}

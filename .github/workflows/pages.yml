@@ -26,11 +26,19 @@ jobs:
           root_file: curriculum.tex
           working_directory: cv
 
+      - name: Render CV thumbnail
+        run: |
+          sudo apt-get update -q && sudo apt-get install -yq poppler-utils
+          pdftoppm -png -f 1 -l 1 -singlefile -scale-to-x 720 -scale-to-y -1 cv/curriculum.pdf assets/cv-page1
+
       - name: Assemble site
         run: |
           mkdir -p _site
           cp -r index.html assets _site/
           cp cv/curriculum.pdf _site/cv.pdf
+          # DATE field on the sheet = deploy date
+          sed -i "s|<span class=\"hand\" id=\"today\">[^<]*</span>|<span class=\"hand\" id=\"today\">$(date -u '+%-d %b %Y')</span>|" _site/index.html
+          grep -q 'id="today"' _site/index.html
 
       - uses: actions/configure-pages@v5
 

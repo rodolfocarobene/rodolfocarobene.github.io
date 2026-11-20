@@ -13,3 +13,8 @@ cv/*.synctex.gz
 # Local preview / CI staging
 cv.pdf
 _site/
+# CV thumbnail, rendered from cv.pdf in CI
+assets/cv-page1.png
+.impeccable/review/
+.impeccable/questions/
+.impeccable/hook.cache.json

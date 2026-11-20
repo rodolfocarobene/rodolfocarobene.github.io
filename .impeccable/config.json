@@ -20,6 +20,11 @@
         ],
         "createdAt": "2026-11-20T14:11:45.129Z",
         "reason": "finish reviewer: contacts ledger is a ruled pad table, 40px rows vertically centred"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "condensed\",sans-serif",
+        "createdAt": "2026-11-20T14:21:47.778Z"
       }
     ]
   }

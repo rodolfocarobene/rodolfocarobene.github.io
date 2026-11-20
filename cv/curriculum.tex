@@ -1,0 +1,238 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[scaled=0.94]{helvet}
+\usepackage{microtype}
+\usepackage[a4paper,left=1.55cm,right=1.55cm,top=1.25cm,bottom=1.45cm]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{needspace}
+\usepackage{fancyhdr}
+\usepackage[
+  backend=biber,
+  style=numeric,
+  sorting=ydnt,
+  maxbibnames=1,
+  minbibnames=1,
+  giveninits=true,
+  defernumbers=true
+]{biblatex}
+
+\addbibresource{sample.bib}
+\renewcommand*{\bibfont}{\small}
+\setlength{\bibitemsep}{0.55em}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{Accent}{HTML}{214F77}
+\definecolor{AccentMuted}{HTML}{4F7695}
+\definecolor{AccentPale}{HTML}{EEF4F8}
+\definecolor{DarkGrey}{HTML}{252A2E}
+\definecolor{BodyGrey}{HTML}{454C52}
+\definecolor{RuleGrey}{HTML}{C9D5DE}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=Accent,
+  linkcolor=Accent,
+  pdfauthor={Rodolfo Carobene},
+  pdftitle={Curriculum Vitae -- Rodolfo Carobene}
+}
+\urlstyle{same}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[L]{\scriptsize\color{AccentMuted}Rodolfo Carobene \textbar{} Curriculum Vitae}
+\fancyfoot[R]{\scriptsize\color{AccentMuted}\thepage}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.32em}
+\setlength{\footskip}{0.65cm}
+\color{BodyGrey}
+\raggedbottom
+
+\setlist[itemize]{
+  leftmargin=1.3em,
+  label=\textcolor{AccentMuted}{\small\textbullet},
+  itemsep=0.18em,
+  topsep=0.35em,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\titleformat{\section}
+  {\Large\bfseries\color{Accent}}
+  {}{0pt}{}
+  [\vspace{0.2em}\color{RuleGrey}\titlerule]
+\titlespacing*{\section}{0pt}{1.25em}{0.55em}
+
+\newcommand{\cvsection}[1]{%
+  \Needspace{7\baselineskip}%
+  \section{#1}%
+}
+
+% Usage: \cventry{role or degree}{institution or context}{dates}{location}
+\newcommand{\cventry}[4]{%
+  \Needspace{4\baselineskip}%
+  \par\addvspace{0.45em}%
+  \begin{tabularx}{\textwidth}{@{}X>{\raggedleft\arraybackslash}p{5.45cm}@{}}
+    {\large\bfseries\color{DarkGrey}#1} & {\small\bfseries\color{AccentMuted}#3} \\
+    {\bfseries\color{Accent}#2} & {\small\color{BodyGrey}#4}
+  \end{tabularx}%
+  \vspace{-0.2em}
+}
+
+\newcommand{\profilebox}[1]{%
+  \par\begingroup
+  \setlength{\fboxsep}{0.85em}%
+  \noindent\colorbox{AccentPale}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+      \small\color{DarkGrey}#1%
+    }%
+  }%
+  \endgroup\par
+}
+
+\begin{document}
+
+\begin{minipage}[t]{0.58\textwidth}
+  \vspace{0pt}
+  {\fontsize{27}{30}\selectfont\bfseries\color{DarkGrey}Rodolfo Carobene}\par
+  \vspace{0.3em}
+  {\large\bfseries\color{Accent}PhD Candidate in Physics}\par
+  {\normalsize\color{AccentMuted}Superconducting quantum technologies}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.39\textwidth}
+  \vspace{0.15em}
+  \raggedleft\small
+  Milan, Italy\\[0.15em]
+  \href{mailto:r.carobene@campus.unimib.it}{r.carobene@campus.unimib.it}\\[0.15em]
+  \href{https://github.com/rodolfocarobene}{github.com/rodolfocarobene}\\[0.15em]
+  \href{https://orcid.org/0000-0002-0579-3017}{ORCID 0000-0002-0579-3017}
+\end{minipage}
+
+\vspace{0.7em}
+{\color{Accent}\rule{\textwidth}{1.2pt}}
+\vspace{0.15em}
+
+\cvsection{Profile}
+
+\profilebox{%
+I am a quantum-technology researcher working with qubits, qudits, and superconducting devices. I enjoy learning new concepts and tools, particularly when they allow me to solve practical research problems. During my PhD, for example, I took the opportunity to learn FPGA development so that I could contribute directly to my group's qubit-control platform.
+I am comfortable learning independently, including when the required expertise is not readily available locally. During my research stays abroad, colleagues consistently valued both my technical contributions and my collaborative approach.
+
+Although I take my research seriously, I also value interests outside work. In my free time, I am learning woodworking and continue to enjoy reading, hiking, and cultivating bonsai, activities that I find both calming and enriching.
+}
+
+\cvsection{Current Position}
+
+\cventry{PhD Candidate in Physics}{University of Milano-Bicocca}{November 2023 -- Present}{Milan, Italy}
+\begin{itemize}
+  \item Investigate qudits as a natural extension of the qubit paradigm, with applications to quantum simulation and quantum sensing. My work focuses particularly on fermionic simulations and searches for dark-matter candidates such as axions and dark photons.
+  \item Design and perform control and readout experiments on superconducting quantum devices using RFSoC-based electronics and travelling-wave parametric amplifiers.
+  \item Maintain and extend the software and FPGA firmware required by the experimental setup, currently based on a ZCU216 RFSoC. In particular, I developed a multi-board synchronisation method to improve the scalability of the open-source QICK control system and integrate it into the Qibo framework.
+  \item Contribute to the open-source quantum-control projects \href{https://github.com/qiboteam/qibolab}{Qibolab}, \href{https://github.com/qiboteam/qibosoq}{Qibosoq}, and Qinst, which support the characterisation and calibration workflow of our superconducting-qubit experiments.
+  \item Contribute to the BAWSHA project, which is developing a sensor for high-frequency gravitational waves based on mechanical resonators and SQUID amplifiers. I designed and implemented the FPGA firmware for multiple digital lock-in amplifiers, enabling the continuous acquisition of several bulk-acoustic-wave resonances.
+  \item Supervise several bachelor's thesis projects and one master's thesis project.
+\end{itemize}
+
+\cvsection{Research Internships}
+
+\cventry{Research Intern}{Intermodulation Products}{September 2024 -- February 2025}{Stockholm, Sweden}
+\begin{itemize}
+  \item Learned FPGA firmware development under the supervision of Riccardo Borgani and Mats Thol\'en, with a focus on high-frequency RF signal processing and components such as direct digital synthesis, digital down-conversion, and decimation filters.
+  \item Developed continuous two-tone RFSoC firmware for the control and characterisation of superconducting qubits. The system updates the swept frequency on every acquisition cycle, enabling smooth continuous spectroscopy and the study of hysteretic behaviour in nonlinear systems such as Duffing oscillators.
+\end{itemize}
+
+\Needspace{11\baselineskip}
+\cventry{Research Intern}{Technology Innovation Institute (TII)}{March 2023 -- August 2023}{Abu Dhabi, UAE}
+\begin{itemize}
+  \item Learned to characterise and control superconducting qubits as part of my master's thesis. I worked with TII's developing control middleware and tested several commercial control platforms in cryogenic experiments.
+  \item Integrated QICK-based RFSoC control electronics with Qibolab for device characterisation and calibration. By developing Qibosoq, I helped demonstrate experimental performance comparable to commercial systems while retaining the flexibility and lower cost of an open-source platform.
+\end{itemize}
+
+\cvsection{Education}
+
+\cventry{PhD in Physics}{University of Milano-Bicocca}{November 2023 -- Present}{Milan, Italy}
+\begin{itemize}
+  \item Supervisor: Prof. Andrea Giachero.
+  \item Research area: superconducting qubits and qudits for quantum computing and sensing.
+\end{itemize}
+
+\cventry{MSc in Physics}{University of Milano-Bicocca}{September 2021 -- October 2023}{Milan, Italy}
+\begin{itemize}
+  \item Thesis: \emph{Qubit Characterization and Calibration on an RFSoC-Based Control System}.
+  \item Supervisors: Prof. Andrea Giachero and Prof. Stefano Carrazza.
+\end{itemize}
+
+\cventry{BSc in Physics}{University of Milano-Bicocca}{September 2018 -- July 2021}{Milan, Italy}
+\begin{itemize}
+  \item Thesis: \emph{Study of the Dissociation of the Trihydrogen Cation Using Quantum Computers}.
+  \item Supervisors: Dr Andrea Giachero and Dr Stefano Barison.
+\end{itemize}
+
+\cvsection{Related Schools}
+
+\begin{itemize}
+  \item Spring School on Superconducting Qubit Technology, Benasque Science Center, May 2025.
+  \item Quantum Science Generation, May 2024 (with poster contribution).
+  \item SQMS/GGI Summer School on Quantum Simulation of Field Theories, Galileo Galilei Institute for Theoretical Physics, July 2022.
+\end{itemize}
+
+\cvsection{Publications}
+
+\nocite{*}
+\printbibliography[heading=none]
+
+\cvsection{Talks and Seminars}
+
+\begin{itemize}
+    \item \textbf{April 2026 (Politecnico di Torino, Turin, Italy):} Lecture on Qubit Calibration and Characterization \textit{for the Master's Programme in Quantum Technologies}    
+    \item \textbf{April 2026 (Naples, Italy):} Talk on Advances Toward Scalable Superconducting Qubit Systems \textit{for the 3rd NQSTI National Congress}
+    \item \textbf{February 2026 (Milan, Italy):} Talk on Local Fermionic Qudit Mappings \textit{for the 3rd Workshop on Quantum Computing @ INFN}
+    \item \textbf{September 2025 (CECAM-IT-SISSA-SNS):} Talk on Local Fermion-to-Qudit Mapping \textit{for the workshop on Quantum Computing for Classical Complex Systems: Opportunities and Challenges from Soft Matter to Life Sciences}
+    \item \textbf{March 2025 (BME Institute of Physics, Budapest, Hungary):} Talk, remote, on Leveraging Qudits for Efficient Fermionic Simulations \textit{for the Budapest Integrability Events}  
+    \item \textbf{March 2025 (Politecnico di Torino, Turin, Italy):} Lecture on Qubit Calibration and Characterization \textit{for the Master's Programme in Quantum Technologies}
+    \item \textbf{February 2025 (Rome, Italy):} Talk on Development of a Custom Superconducting Qubit Control and Readout
+System \textit{for the 2ns NQSTI National Congress}
+    \item \textbf{June 2024 (CERN, Geneva, Switzerland):} Talk on FPGA-based system for superconducting qubits control and readout \textit{for the 1st FPGA Developers' Forum}
+    \item \textbf{January 2024 (Rome, Italy):} Talk on Superconducting qubits control using FPGAs \textit{for the 1st NQSTI National Congress}
+    
+\end{itemize}
+
+\cvsection{Mentoring and Outreach}
+
+\cventry{Private Tutor}{Mathematics, Physics, and Computer Science}{2018 -- Present}{Milan, Italy}
+\begin{itemize}
+  \item Tutor high-school and university students in mathematics, physics, and computer science.
+  \item Participated in the MeetMeTonight science festival with an outreach activity on sugars.
+\end{itemize}
+
+\cventry{Freshman Tutor}{University of Milano-Bicocca}{September 2025 -- September 2026}{Milan, Italy}
+\begin{itemize}
+  \item Supported first-year students enrolled in the Physical Sciences for Innovative Technologies degree programme during their transition to university study.
+\end{itemize}
+
+\cventry{Freshman Tutor}{University of Milano-Bicocca}{September 2022 -- September 2023}{Milan, Italy}
+\begin{itemize}
+  \item Supported first-year Physics students during their transition to university study.
+\end{itemize}
+
+\cvsection{Academic Service}
+
+\cventry{Student Representative}{University of Milano-Bicocca}{December 2019 -- Present}{Milan, Italy}
+\begin{itemize}
+  \item PhD student representative since 2024.
+  \item Elected to the Department Council in 2019 and 2021, and to the Teaching Council in 2021.
+  \item President of the Physics Student Representatives' Association from 2020 to 2022.
+\end{itemize}
+
+\end{document}
